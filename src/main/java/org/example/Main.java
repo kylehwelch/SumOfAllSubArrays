@@ -2,7 +2,8 @@ package org.example;
 
 public class Main {
 
-    //triple nested for-loop, used in whiteboarding exercise
+    //triple nested for-loop, used in whiteboarding exercise.
+    //using this as control to find correct answers for testing.
     public int sumOfAllSubArrays(int[] arr) {
         if (arr.length == 1) return arr[0];
         int sum = 0;
