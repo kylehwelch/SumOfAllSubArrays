@@ -1,6 +1,8 @@
 package org.example;
 
 public class Main {
+
+    //triple nested for-loop, used in whiteboarding exercise
     public int sumOfAllSubArrays(int[] arr) {
         if (arr.length == 1) return arr[0];
         int sum = 0;
@@ -49,6 +51,8 @@ public class Main {
         return sum;
     }
 
+
+    //found this answer on google
     public int sumOfAllSubArrays3(int[] arr) {
         if (arr.length == 1) return arr[0];
         int n = arr.length;
