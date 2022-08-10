@@ -4,7 +4,7 @@ public class Main {
 
     //triple nested for-loop, used in whiteboarding exercise.
     //using this as control to find correct answers for testing.
-    public int sumOfAllSubArrays(int[] arr) {
+    public int sumOfAllSubArraysControl(int[] arr) {
         if (arr.length == 1) return arr[0];
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -40,7 +40,7 @@ public class Main {
 //
 //    each iteration will add current element * (index + 1) and add the amount of the previous iteration
 //    prevIteration will be the previous iteration.
-    public int sumOfAllSubArrays2(int[] arr) {
+    public int sumOfAllSubArraysWork(int[] arr) {
         if (arr.length == 1) return arr[0];
         int sum = arr[0];
         int thisIteration = arr[0];
@@ -54,7 +54,7 @@ public class Main {
 
 
     //found this answer on google
-    public int sumOfAllSubArrays3(int[] arr) {
+    public int sumOfAllSubArraysGoogle(int[] arr) {
         if (arr.length == 1) return arr[0];
         int n = arr.length;
         int totalSum = 0;
