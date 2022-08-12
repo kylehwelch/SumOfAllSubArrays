@@ -1,11 +1,12 @@
 package org.example;
 
+import java.util.Random;
+
 public class Main {
 
     //triple nested for-loop, used in whiteboarding exercise.
     //using this as control to find correct answers for testing.
     public int sumOfAllSubArraysControl(int[] arr) {
-        if (arr.length == 1) return arr[0];
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j < arr.length; j++) {
@@ -47,7 +48,7 @@ public class Main {
         for (int i = 1; i < arr.length; i++) {
             int prevIteration = thisIteration;
             thisIteration = ((i + 1) * arr[i]) + prevIteration;
-            sum += ((i + 1) * arr[i]) + prevIteration;
+            sum += thisIteration;
         }
         return sum;
     }
@@ -55,12 +56,24 @@ public class Main {
 
     //found this answer on google
     public int sumOfAllSubArraysGoogle(int[] arr) {
-        if (arr.length == 1) return arr[0];
         int n = arr.length;
         int totalSum = 0;
         for (int i = 0; i < n ; i++) {
             totalSum += arr[i] * (n-i)*(i+1);
         }
         return totalSum;
+    }
+
+    public static int[] createRandomArray(int n) {
+        int random;
+        int[] array = new int[n];
+        for (int i = 0; i < n; i++) {
+            random = (int) (Math.random() * n);
+            if (random < 0) {
+                random *= -1;
+            }
+            array[i] = random;
+        }
+        return array;
     }
 }
