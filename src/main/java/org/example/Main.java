@@ -6,8 +6,8 @@ public class Main {
 
     //triple nested for-loop, used in whiteboarding exercise.
     //using this as control to find correct answers for testing.
-    public int sumOfAllSubArraysControl(int[] arr) {
-        int sum = 0;
+    public long sumOfAllSubArraysControl(long[] arr) {
+        long sum = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j < arr.length; j++) {
                 for (int k = i; k <= j ; k++) {
@@ -41,12 +41,12 @@ public class Main {
 //
 //    each iteration will add current element * (index + 1) and add the amount of the previous iteration
 //    prevIteration will be the previous iteration.
-    public int sumOfAllSubArraysWork(int[] arr) {
+    public long sumOfAllSubArraysWork(long[] arr) {
         if (arr.length == 1) return arr[0];
-        int sum = arr[0];
-        int thisIteration = arr[0];
+        long sum = arr[0];
+        long thisIteration = arr[0];
         for (int i = 1; i < arr.length; i++) {
-            int prevIteration = thisIteration;
+            long prevIteration = thisIteration;
             thisIteration = ((i + 1) * arr[i]) + prevIteration;
             sum += thisIteration;
         }
@@ -55,20 +55,20 @@ public class Main {
 
 
     //found this answer on google
-    public int sumOfAllSubArraysGoogle(int[] arr) {
-        int n = arr.length;
-        int totalSum = 0;
+    public long sumOfAllSubArraysGoogle(long[] arr) {
+        long n = arr.length;
+        long totalSum = 0;
         for (int i = 0; i < n ; i++) {
             totalSum += arr[i] * (n-i)*(i+1);
         }
         return totalSum;
     }
 
-    public static int[] createRandomArray(int n) {
-        int random;
-        int[] array = new int[n];
+    public static long[] createRandomArray(int n) {
+        long random;
+        long[] array = new long[n];
         for (int i = 0; i < n; i++) {
-            random = (int) (Math.random() * n);
+            random = (long) (Math.random() * n);
             if (random < 0) {
                 random *= -1;
             }
